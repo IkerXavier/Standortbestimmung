@@ -25,7 +25,7 @@ public class ToDoList {
                     hinzufügen();
                     break;
                 case "2":
-                    anzeigen();
+                    System.out.println(anzeigen(todos));
                     break;
                 case "3":
                     bearbeiten();
@@ -59,9 +59,12 @@ public class ToDoList {
         return null;
     }
 
-    public static void anzeigen() {
+    public static String anzeigen(ArrayList<String> todos) {
         Scanner scanner = new Scanner(System.in);
         int liste = 0;
+        String ausgabe = "";
+        ausgabe = "\uD83D\uDE0A";
+        ausgabe = ausgabe + todos;
         System.out.println("———————————————————————————————————————————————");
         System.out.println("Hier sehen sie alle Aufgaben angezeigt\uD83D\uDE02(Ihre To Do List):");
         System.out.println("Liste: " + todos);
@@ -70,6 +73,7 @@ public class ToDoList {
         String zahl = scanner.nextLine();
 
         System.out.println("———————————————————————————————————————————————");
+        return ausgabe;
     }
 
     public static void bearbeiten() {

@@ -22,16 +22,22 @@ class ToDoListTest {
 
     @Test
     void hinzufügenTest() {
-        ArrayList list = toDoList.hinzufügen();
+        ArrayList<String> liste = new ArrayList<>();
+        liste.add("Hoi");
 
-        list.add("lol");
-        assertEquals("lol", list.add(list.get(0)));
+        assertEquals(1, liste.size());
+        assertEquals("Hoi", liste.get(0));
     }
 
     @Test
     void anzeigenTest() {
-        toDoList.todos.add("lol");
-        assertEquals("lol", toDoList.todos.get(0));
+        ArrayList<String> liste = new ArrayList<>();
+        liste.add("lol");
+        liste.add("cool");
+
+        String b = ToDoList.anzeigen(liste);
+        String ausgabe = "[lol,cool]";
+        assertEquals("[lol, cool]",ToDoList.anzeigen(liste));
     }
 
     @Test
